@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { getWorkouts } from '../api/workoutsApi';
 import WorkoutCard from '../components/WorkoutCard';
 
@@ -22,19 +23,22 @@ export default function WorkoutsList() {
         fetchData();
     }, [search]);
 
-    if (loading) return <p>Loading workouts...</p>;
-    if (error) return <p>Error: {error}</p>;
+    if (loading) return <p style={{ padding: 16 }}>Loading workouts...</p>;
+    if (error) return <p style={{ padding: 16, color: 'crimson' }}>Error: {error}</p>;
 
     return (
-        <main style={{ padding: '1rem' }}>
-            <h1>GymGenie Workouts</h1>
+        <main style={{ padding: 16 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
+                <h1>GymGenie Workouts</h1>
+                <Link to="/workouts/new" className="btn">+ New Workout</Link>
+            </div>
 
             <input
                 type="text"
                 placeholder="Search workouts..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                style={{ marginBottom: '1rem', padding: '0.5rem' }}
+                style={{ marginBottom: '1rem', padding: '0.5rem', width: '100%', maxWidth: 420 }}
             />
 
             {workouts.length === 0 ? (
@@ -48,10 +52,13 @@ export default function WorkoutsList() {
                     }}
                 >
                     {workouts.map((w) => (
-                        <WorkoutCard key={w._id} workout={w} />
+                        <Link key={w._id} to={`/workouts/${w._id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                            <WorkoutCard workout={w} />
+                        </Link>
                     ))}
                 </div>
             )}
         </main>
     );
 }
+
