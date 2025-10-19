@@ -92,13 +92,62 @@ button {
   background: #eee;
 }
 
+
 .card {
+  background: #fff;
+  color: #111;
+
   border: 1px solid #e5e5e5;
   border-radius: 10px;
   padding: 12px;
-  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .06);
 }
+
+.card h3,
+.card p,
+.card small {
+  color: inherit;
+}
+
 
 label {
   gap: 6px;
+}
+
+
+.btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #f6f6f6;
+  color: #111;
+
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #eee;
+}
+
+
+.btn--primary {
+  background: #6366f1;
+  border-color: #6366f1;
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: #4f46e5;
+}
+
+
+.btn--ghost {
+  background: #eee;
+  color: #111;
+}
+
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
