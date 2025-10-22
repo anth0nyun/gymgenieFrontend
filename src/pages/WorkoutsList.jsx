@@ -30,6 +30,7 @@ export default function WorkoutsList() {
         <main style={{ padding: 16 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
                 <h1>GymGenie Workouts</h1>
+                <Link to="/planner" className="btn" style={{ marginRight: 8 }}>Open Planner</Link>
                 <Link to="/workouts/new" className="btn">+ New Workout</Link>
             </div>
 

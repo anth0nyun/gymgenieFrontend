@@ -151,3 +151,26 @@ label {
   opacity: 0.6;
   cursor: not-allowed;
 }
+
+.planner-grid {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 1fr; /* keep single column */
+  margin-top: 20px;
+}
+
+.planner-card {
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--card, #1f1f1f);
+  border: 1px solid var(--border, #2c2c2c);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+.planner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
