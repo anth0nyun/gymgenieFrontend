@@ -11,7 +11,7 @@ export default function Planner() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
 
-    // The selected workout for each day (by _id)
+    // The selected workout for each day (by id)
     const [plan, setPlan] = useState(() => {
         try {
             const saved = localStorage.getItem(STORAGE_KEY);
@@ -55,14 +55,15 @@ export default function Planner() {
     if (error) return <main style={{ padding: 16, color: "crimson" }}>Error: {error}</main>;
 
     return (
-        <main>
-            <div className="planner-header">
-                <h1>Weekly Planner</h1>
-                <div className="row">
-                    <Link to="/" className="btn" >← Back</Link>
+        <main className="stack">
+            <div className="page-header">
+                <h1 className="m0">Weekly Planner</h1>
+                <div className="btn-group">
+                    <Link to="/" className="btn">← Back</Link>
                     <button onClick={clearPlan} className="btn btn--ghost">Clear plan</button>
                 </div>
             </div>
+
 
             <div className="planner-grid">
                 {DAYS.map(day => (
