@@ -155,7 +155,7 @@ label {
 .planner-grid {
   display: grid;
   gap: 28px;
-  grid-template-columns: 1fr; /* keep single column */
+  grid-template-columns: 1fr;
   margin-top: 20px;
 }
 
@@ -164,13 +164,33 @@ label {
   border-radius: 12px;
   background: var(--card, #1f1f1f);
   border: 1px solid var(--border, #2c2c2c);
-  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
-.planner-header {
+.page-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 18px;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
+.btn-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.planner-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+.planner-card {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border, #2c2c2c);
+  background: var(--card, #1f1f1f);
+  box-shadow: var(--shadow, 0 3px 10px rgba(0, 0, 0, .25));
+}
