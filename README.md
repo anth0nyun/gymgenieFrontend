@@ -53,3 +53,8 @@ After CRUD functionality was complete, a **Weekly Planner page** was added to de
 - **User Accounts:** Add authentication and personal dashboards
 - **Workout Analytics:** Display progress charts and PR tracking
 - **Mobile Responsive Design:** Optimize layout for phones/tablets
+
+
+## Backend GitHub
+
+https://github.com/anth0nyun/gymgenieBackend.git
